@@ -3,7 +3,7 @@
 export default function cardcomponent() {
   return (
     <>
-      <div className="  flex ">
+      {/* <div className="  flex ">
         <div className=" bg-blue-500 m-3 p-2 flex flex-col w-[20vw] ">
           <div className="w-[100vw]">
             <img src="another.png" alt="" />
@@ -108,7 +108,7 @@ export default function cardcomponent() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
