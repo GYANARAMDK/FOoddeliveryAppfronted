@@ -1,0 +1,30 @@
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns in a row */
+    gap: 20px; /* Space between products */
+    list-style-type: none; /* Remove default bullets */
+    padding: 0;
+  }
+  
+  /* Style for individual product items */
+  .product-item {
+    border: 1px solid #ddd; /* Add a border to each product */
+    padding: 16px;
+    border-radius: 8px; /* Rounded corners */
+    text-align: center;
+  }
+  
+  .product-item img {
+    max-width: 100%; /* Make sure the image fits the container */
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .product-item h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .product-item p {
+    margin: 5px 0;
+  }
