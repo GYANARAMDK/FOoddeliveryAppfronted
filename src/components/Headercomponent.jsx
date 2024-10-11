@@ -61,7 +61,7 @@ export default function Headercomponent() {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink className="nav-link" to="/">
+                <NavLink className="nav-link" to="/login">
                   <span className="fa fa-user" aria-hidden="true"></span> Login
                 </NavLink>
               </NavItem>

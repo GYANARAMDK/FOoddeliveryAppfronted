@@ -2,12 +2,17 @@
 // import Card
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Cardcomponent from "../components/Cardcomponent";
 import './/Homecomponent.css'
+
 export default function Homecomponent() {
+  const navigate=useNavigate()
+  
   const [product, setproduct] = useState([]);
   const [loaing, setloading] = useState(true);
   const [error, seterror] = useState(null);
+  
   useEffect(() => {
     const fetchproducts = async () => {
       try {
@@ -27,10 +32,29 @@ export default function Homecomponent() {
     };
     fetchproducts();
   }, []);
+
+  
+  const handlesignleproduct=(e)=>{
+    const productid=e.currentTarget.getAttribute('data-id')
+  navigate(`/product/${productid}`);
+ 
+   
+
+  }
   return (
     <>
-      
-      <Cardcomponent product={product} />
+       <div>
+        <h1>Product List</h1>
+        <ul className="product-grid" >
+          {product.map((product) => (
+            <li key={product._id} className="product-item"onClick={handlesignleproduct} data-id={product._id} >
+               <Cardcomponent product={product} />
+
+           </li>
+          ))}
+        </ul>
+      </div>
+
     </>
   );
 }

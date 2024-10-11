@@ -1,9 +1,9 @@
-import React from 'react'
+// import React from 'react'
 import { Modal ,Button} from "react-bootstrap";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Logincomponet() {
+export default function Logincomponent() {
   const [showmodal, setshowmodal] = useState(false);
   const [password,setPassword]=useState('');
   const [number,setNumber]=useState('')
@@ -56,8 +56,8 @@ export default function Logincomponet() {
         }
   }
   return (
+    
     <div>
-      
         <center>
           <Button variant="primary" onClick={handleshow}>
             login
