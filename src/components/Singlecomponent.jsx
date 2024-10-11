@@ -14,19 +14,21 @@ export default function Singleproduct() {
      
             if(responce){
              setproduct(responce.data)
-             console.log("hello")
+             console.log(product)
             }
               
       
            } catch (error) {
             console.log(error)
+            console.log('hello')
           }
         }
       fetchproduct();
-  },[productid])
+  },[productid,product])
   return (
     <div>
        <h1>project details we get</h1>
+       <h1>p</h1>
     </div>
   )
 }
