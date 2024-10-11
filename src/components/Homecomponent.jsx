@@ -35,12 +35,15 @@ export default function Homecomponent() {
 
   
   const handlesignleproduct=(e)=>{
+    e.stopPropagation();
     const productid=e.currentTarget.getAttribute('data-id')
+    
   navigate(`/product/${productid}`);
  
    
 
   }
+  
   return (
     <>
        <div>
