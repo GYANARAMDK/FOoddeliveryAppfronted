@@ -9,12 +9,15 @@ import {
   Collapse,
   NavItem,
 } from "reactstrap";
+import { useContext } from "react";
+import { CountContext } from "./contextapi";
 import { Button, Badge } from "react-bootstrap";
 import { FaShoppingCart } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { useCart } from "./CartContext";
 import './style.css'
 export default function Headercomponent() {
+  const {count,setcount} =useContext(CountContext);
   const { cart } = useCart();
   const [isNavOpen, setisNavOpen] = useState(false);
   const [CartCount, setCartCount] = useState(0);
@@ -79,8 +82,9 @@ export default function Headercomponent() {
                 className="cart-button"
               >
                 <FaShoppingCart />
-                Cart
-                <Badge bg="secondary">{cart.length}</Badge>
+                Cart 
+                <Badge bg="secondary">{count}</Badge>
+               
               </Button>
             </Nav>
           </Collapse>
