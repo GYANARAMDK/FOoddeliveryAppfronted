@@ -10,8 +10,8 @@ export default function Singleproduct() {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, seterror] = useState();
-  const [price,setprice]=useState(0);
-  const [sidewindow,setsidewindow]=useState(false);
+  const [price, setprice] = useState(0);
+  const [sidewindow, setsidewindow] = useState(false);
   const { productid } = useParams();
   useEffect(() => {
     const fetchproduct = async () => {
@@ -40,17 +40,19 @@ export default function Singleproduct() {
   if (!product) {
     return <div>no product found</div>;
   }
-  const orderhandle=()=>{
-   setsidewindow(!sidewindow)
-  }
-  const increment=()=>{
-    setvalue(prev=>prev+1);
-    setprice(prev=>prev+product.product.price)
-  }
-  const decrement=()=>{
-    setvalue(prev=>prev-1);
-    setprice(prev=>prev-product.product.price)
-  }
+  const orderhandle = () => {
+    setsidewindow(!sidewindow);
+    setprice((prev) => prev + product.product.price);
+    setvalue((prev) => prev + 1);
+  };
+  const increment = () => {
+    setvalue((prev) => prev + 1);
+    setprice((prev) => prev + product.product.price);
+  };
+  const decrement = () => {
+    setvalue((prev) => prev - 1);
+    setprice((prev) => prev - product.product.price);
+  };
   return (
     <div>
       <h1>product details</h1>
@@ -68,31 +70,29 @@ export default function Singleproduct() {
               {" "}
               add to cart
             </button>
-            
-            <button className="bg-red-400 rounded p-2 " onClick={orderhandle}>order now </button>
+
+            <button className="bg-red-400 rounded p-2 " onClick={orderhandle}>
+              order now{" "}
+            </button>
           </div>
         </div>
-         {sidewindow &&(
+        {sidewindow && (
           <div className="w-[30vw] bg-red-300 flex flex-col rounded m-3 p-2">
-          <h2>{product.product.name}</h2>
-          <h2>{price}</h2>
-          <div className="bg-gray-300 flex justify-center items-center w-[40%] ">
-              <button
-                className="px-3"
-                onClick={increment}
-              >
+            <h2>{product.product.name}</h2>
+            <h2>{price}</h2>
+            <div className="bg-gray-300 flex justify-center items-center w-[40%] rounded ">
+              <button className="px-3" onClick={increment}>
                 <b>+</b>
               </button>
               <h2 className="px-3 text-center ">{value}</h2>
-              <button
-                className="px-3"
-                onClick={decrement}
-              >
+              <button className="px-3" onClick={decrement}>
                 <b>-</b>
               </button>
+              
             </div>
-         </div>
-         )}
+            <button className="bg-blue-400 rounded justify-center items-center p-2 mt-2">contiue</button>
+          </div>
+        )}
       </div>
     </div>
   );
